@@ -8,5 +8,7 @@ class configUtil():
         with open('appconfig.json', 'r') as file:
             self.config = json.load(file)
             print('cofig loaded')
-            return self.config
 
+    #get a property from the config. if empty return null
+    def getProperty(self, property):
+        return self.config[property] if self.config[property] else ''
